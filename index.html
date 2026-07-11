@@ -3,82 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mikael Marley | Atleta de Corrida de Rua</title>
+    <title>Mikael Marley | Performance & Endurance</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #08080a;
+            --card-dark: #111115;
+            --accent-red: #ff3838;
+            --text-light: #f5f5f7;
+            --text-muted: #86868b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbfbfd;
+            color: #1d1d1f;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Minimalista e Elegante */
+        .navbar {
+            background-color: rgba(8, 8, 10, 0.92) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 40px !important;
+        }
+        .navbar-brand {
+            font-family: 'Syncopate', sans-serif;
+            color: #fff !important;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+        .navbar-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-links a {
+            color: var(--text-muted) !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        .navbar-links a:hover {
+            color: #fff !important;
+        }
+
+        /* Hero Section com Degradê Profissional */
+        #hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), var(--bg-dark)), url('images/meditating.webp') center/cover no-repeat;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-content h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-top: 24px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* Seção Sobre com Bloco de Citação de Impacto */
+        .section-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        .quote-container {
+            border-left: 5px solid var(--accent-red);
+            padding-left: 30px;
+            margin: 40px 0;
+        }
+        .quote-text {
+            font-size: 1.6rem;
+            line-height: 1.6;
+            font-weight: 600;
+            color: #000;
+            font-style: italic;
+        }
+
+        /* Cards de Performance (Substituindo a tabela feia) */
+        .perf-card {
+            background: #fff;
+            border: 1px solid #e5e5e7;
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .perf-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            border-color: #1d1d1f;
+        }
+        .card-stat {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 2.2rem;
+            color: var(--accent-red);
+            margin: 15px 0;
+        }
+
+        /* Selo de Princípios Inegociáveis */
+        .badge-principles {
+            background-color: #fff;
+            border: 2px solid #ffcc00;
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        /* Rodapé Ultra-Premium (A parte que estava feia, agora totalmente reformulada) */
+        .premium-footer {
+            background-color: var(--bg-dark);
+            color: #fff;
+            padding: 100px 0 60px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-cta-box {
+            background: var(--card-dark);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 32px;
+            padding: 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .btn-premium-mail {
+            background-color: #fff;
+            color: #000;
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 16px 40px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #fff;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-premium-mail:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+        .btn-premium-insta {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 50px;
+            padding: 16px 40px;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-premium-insta:hover {
+            transform: scale(1.03);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.8rem; }
+            .navbar { padding: 15px 20px !important; }
+            .navbar-links { gap: 15px; }
+            .footer-cta-box { padding: 30px; }
+        }
+    </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <a class="navbar-brand" href="#">Mikael Marley</a>
+<nav class="navbar sticky-top">
+  <a class="navbar-brand" href="#">MIKAEL MARLEY</a>
   <ul class="navbar-links">
-    <li><a href="#about">Sobre Mim</a></li>
-    <li><a href="#races">Marcas & Calendário</a></li>
-    <li><a href="#sponsorship">Patrocínio</a></li>
-    <li><a href="#contact">Contato</a></li>
+    <li><a href="#about">História</a></li>
+    <li><a href="#races">Performance</a></li>
+    <li><a href="#contact">Patrocínio</a></li>
   </ul>
 </nav>
 
 <section id="hero">
-  <div class="hero-content">
-    <h1>Cative suas Rosas.</h1>
-    <p>Arrancando forças do impossível. A jornada está apenas começando.</p>
+  <div class="hero-content container">
+    <h1>Cative suas<br><span style="color: var(--accent-red);">Rosas.</span></h1>
+    <p>Arrancando forças do impossível. 5k to 21k.</p>
   </div>
 </section>
 
 <section id="about" class="container my-5 py-5">
-    <div class="row align-items-center">
-        <div class="col-md-10 mx-auto text-center">
-            <h2 class="fw-bold mb-4">A Minha Essência nas Pistas</h2>
-            <p class="lead text-dark font-italic" style="font-style: italic;">
-                "Eu corro porque amo a sensação do corpo pedindo para parar, amo buscar forças de onde parece não existir mais nada. Sinto meu corpo, sinto minha mente. Deus está sempre ao meu lado, e com Ele eu chego onde jamais chegaria sozinho. Quando cruzo a linha de chegada, a pergunta é sempre a mesma: Como isso foi possível?"
-            </p>
-            <p class="mt-4 text-muted">
-                Sou o <strong>Mikael Marley</strong>, atleta de corrida de rua focado na evolução constante dos 5k aos 21k. Mais do que performance, busco carregar no peito valores de disciplina, verdade e esporte limpo.
+    <div class="row">
+        <div class="col-lg-9 mx-auto">
+            <h2 class="section-title text-center">A Mentalidade</h2>
+            
+            <div class="quote-container">
+                <p class="quote-text">
+                    "Eu corro porque amo a sensação do corpo pedindo para parar, amo essa dor infernal, amo arrancar as forças. Eu sinto o meu corpo, sinto a minha mente. Deus sempre está ao meu lado, e com Ele eu chego onde jamais chegaria. É como se eu estivesse fazendo o impossível... e quando eu cruzo a linha de chegada, eu penso: Como isso foi possível?"
+                </p>
+            </div>
+            
+            <p class="lead text-muted mt-5 text-center fs-5">
+                Sou o <strong>Mikael Marley</strong>, atleta de corrida de rua focado na evolução extrema. Mais do que quilômetros rodados, entrego nas competições uma vitrine de resiliência, fé e verdade. Busco marcas parceiras que queiram alinhar seus nomes à verdadeira essência do esporte.
             </p>
         </div>
     </div>
 </section>
 
-<section id="races" class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center fw-bold mb-5">Resultados & Próximos Desafios</h2>
+<section id="races" class="bg-light py-5 border-top border-bottom">
+    <div class="container py-4">
+        <h2 class="section-title text-center">Métricas & Próximos Alvos</h2>
         
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="bg-white p-4 shadow-sm rounded h-100">
-                    <h4 class="fw-bold text-center mb-3">Melhores Marcas (PB)</h4>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <strong>5 km</strong>
-                            <span class="badge bg-dark rounded-pill">18m 20s (Divinolândia)</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <strong>9 km / 10 km</strong>
-                            <span class="badge bg-secondary rounded-pill">~36m (Foco em Atualizar)</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <strong>21 km (Meia Maratona)</strong>
-                            <span class="badge bg-light text-dark border">Em Preparação</span>
-                        </li>
-                    </ul>
-                    <p class="text-muted small mt-3 text-center">*Evolução recente: 6.65km concluídos em 23m 30s.</p>
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="perf-card h-100 text-center">
+                    <span class="text-uppercase fw-bold text-muted tracking-wide small">Recorde Pessoal</span>
+                    <h3 class="card-stat">18m 20s</h3>
+                    <p class="fw-bold mb-1">Distância: 5 KM</p>
+                    <p class="text-muted small">Conquistado em Divinolândia<br><span class="text-danger fw-bold">(Evolução recente: 6.65km em 23m 30s)</span></p>
                 </div>
             </div>
 
-            <div class="col-md-6 mb-4">
-                <div class="bg-white p-4 shadow-sm rounded h-100">
-                    <h4 class="fw-bold text-center mb-3">Calendário de Competições</h4>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <strong>📍 São João Evangelista (5k)</strong> — Múltiplas etapas (Julho e Setembro)
+            <div class="col-md-4">
+                <div class="perf-card h-100 text-center border-danger" style="background: #fff5f5;">
+                    <span class="badge bg-danger text-uppercase mb-2">Foco Principal</span>
+                    <h3 class="card-stat" style="color: #000;">JIF SUDESTE</h3>
+                    <p class="fw-bold mb-1">09 a 16 de Setembro</p>
+                    <p class="text-muted small">Etapa regional de altíssimo nível. Onde a preparação do ano inteiro será colocada à prova.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="perf-card h-100">
+                    <div class="text-center mb-3">
+                        <span class="text-uppercase fw-bold text-muted small">Calendário de Ruas</span>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 border-bottom pb-2">
+                            <strong>📍 São João Evangelista (5k)</strong><br>
+                            <span class="text-muted small">Etapas em Julho e Setembro</span>
                         </li>
-                        <li class="list-group-item text-danger fw-bold">
-                            <strong>🏆 JIF Sudeste (Etapa Principal)</strong> — 09 a 16 de Setembro (Foco Total)
-                        </li>
-                        <li class="list-group-item">
-                            <strong>📍 Guanhães</strong> — Outubro
+                        <li>
+                            <strong>📍 Guanhães</strong><br>
+                            <span class="text-muted small">Etapa em Outubro</span>
                         </li>
                     </ul>
                 </div>
@@ -87,41 +272,42 @@
     </div>
 </section>
 
-<section id="sponsorship" class="container my-5 py-5 text-center">
-    <h2 class="fw-bold mb-4">Por que apoiar o meu projeto?</h2>
-    <p class="lead col-md-8 mx-auto text-muted mb-5">
-        Conto com uma comunidade engajada de mais de <strong>1.200 seguidores no Instagram</strong>. Apoiar a minha jornada é associar sua marca à saúde, superação e, acima de tudo, à ética. 
-    </p>
-    
-    <div class="row g-4 text-start col-md-10 mx-auto">
-        <div class="col-md-6">
-            <div class="p-3 border rounded shadow-sm bg-white">
-                🏁 <strong>Visibilidade no Pódio e Uniforme:</strong> Sua marca estampada na minha camiseta de treino/provas e agradecimento direto nos pódios.
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="p-3 border rounded shadow-sm bg-white">
-                📱 <strong>Marketing Digital Ativo:</strong> Divulgação da sua marca através de vídeos dedicados e marcações constantes nas postagens.
-            </div>
-        </div>
-        <div class="col-md-10 mx-auto">
-            <div class="p-3 border border-warning rounded shadow-sm bg-light text-center">
-                🛡️ <strong>Parceria Baseada em Princípios:</strong> Prezo pela integridade do meu nome e das marcas que me apoiam. Não associo minha imagem a mercados que fujam dos meus valores éticos e esportivos.
+<section class="container my-5 py-5">
+    <div class="col-lg-8 mx-auto">
+        <h2 class="section-title text-center">O Valor da Parceria</h2>
+        <p class="text-center lead text-muted mb-5">
+            Ao patrocinar, sua empresa ganha exposição direta para uma comunidade engajada de mais de <strong>1.200 seguidores reais</strong> no Instagram, através de uniformes em pódios, vídeos dedicados e marketing de influência autêntico.
+        </p>
+        
+        <div class="badge-principles shadow-sm">
+            <div class="row align-items-center text-center text-md-start">
+                <div class="col-md-2 text-center fs-1 mb-3 mb-md-0">🛡️</div>
+                <div class="col-md-10">
+                    <h5 class="fw-bold text-uppercase tracking-wider" style="color: #b58900;">Parceria Baseada em Princípios</h5>
+                    <p class="text-muted small mb-0">
+                        Prezo pela integridade absoluta da minha imagem. Recentemente recusei propostas do mercado de apostas (Bets) por não se alinharem aos meus valores éticos e esportivos. Patrocinar o meu projeto é associar sua marca a um esporte limpo, focado na verdade e na saúde.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="bg-dark text-white py-5 text-center">
-    <div class="container">
-        <h2 class="fw-bold mb-3">Vamos Correr Juntos?</h2>
-        <p class="text-muted mb-4">Entre em contato para conversarmos sobre propostas e parcerias comerciais.</p>
-        <div class="d-flex justify-content-center gap-3 flex-wrap">
-            <a href="mailto:mikaelmarley892@gmail.com" class="btn btn-outline-light btn-lg px-4">📧 mikaelmarley892@gmail.com</a>
-            <a href="https://instagram.com/mikael_marley" target="_blank" class="btn btn-danger btn-lg px-4">📸 @mikael_marley</a>
+<footer id="contact" class="premium-footer">
+    <div class="container text-center">
+        <div class="footer-cta-box shadow">
+            <h2 class="font-family:'Syncopate' mb-3 text-uppercase tracking-wide" style="font-size: 1.8rem;">Vamos Correr Juntos?</h2>
+            <p class="text-muted mb-5 mx-auto" style="max-width: 550px;">
+                Se a sua empresa busca um embaixador com disciplina inabalável, mentalidade forte e valores sólidos, o projeto está pronto para decolar.
+            </p>
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+                <a href="mailto:mikaelmarley892@gmail.com" class="btn-premium-mail">📧 ENVIAR E-MAIL</a>
+                <a href="https://instagram.com/mikael__marley" target="_blank" class="btn-premium-insta">📸 SEGUIR NO INSTAGRAM</a>
+            </div>
         </div>
+        <p class="mt-5 text-muted small" style="font-size: 0.8rem; letter-spacing: 1px;">&copy; 2026 MIKAEL MARLEY. PERFORMANCE PORTFOLIO.</p>
     </div>
-</section>
+</footer>
 
 </body>
 </html>
