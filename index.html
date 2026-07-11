@@ -12,10 +12,11 @@
 
     <style>
         :root {
-            --brand-color: #E63946; /* Vermelho esportivo e enérgico */
-            --dark-bg: #1A1A24;
-            --light-bg: #F8F9FA;
-            --text-dark: #2B2D42;
+            --brand-color: #0066FF; /* Azul Elétrico de Alta Performance */
+            --brand-gradient: linear-gradient(135deg, #0066FF 0%, #003399 100%);
+            --dark-bg: #0B0F19;
+            --light-bg: #F4F7FC;
+            --text-dark: #1E2229;
         }
 
         body {
@@ -60,10 +61,9 @@
             color: var(--brand-color);
         }
 
-        /* Hero Section - Impacto Visual */
+        /* Hero Section - Agora com a sua foto do Pódio! */
         #hero {
-            /* Dica: Use uma foto sua correndo com boa iluminação no lugar do meditating.webp */
-            background: linear-gradient(to right, rgba(26, 26, 36, 0.9), rgba(26, 26, 36, 0.4)), url('images/meditating.webp') center/cover no-repeat;
+            background: linear-gradient(to right, rgba(11, 15, 25, 0.95) 30%, rgba(11, 15, 25, 0.5) 100%), url('images/Podio.jpg') center/cover no-repeat;
             height: 85vh;
             display: flex;
             align-items: center;
@@ -78,19 +78,21 @@
         }
 
         .hero-title span {
-            color: var(--brand-color);
+            background: linear-gradient(to right, #00D2FF, #0066FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: #E0E0E0;
+            color: #CCD2E3;
             font-weight: 400;
             max-width: 600px;
             margin-bottom: 40px;
         }
 
         .btn-brand {
-            background-color: var(--brand-color);
+            background: var(--brand-gradient);
             color: #FFF;
             font-family: 'Oswald', sans-serif;
             font-weight: 500;
@@ -99,12 +101,16 @@
             border-radius: 4px;
             text-decoration: none;
             transition: all 0.3s ease;
+            border: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
         }
 
         .btn-brand:hover {
-            background-color: #c92a36;
+            background: linear-gradient(135deg, #0055DD 0%, #002277 100%);
             color: #FFF;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
         }
 
         /* Seção de Propósito (Antiga citação) */
@@ -113,6 +119,7 @@
             border-left: 8px solid var(--brand-color);
             padding: 40px;
             border-radius: 0 10px 10px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
         }
 
         .purpose-text {
@@ -126,7 +133,7 @@
         /* Cards de Performance */
         .perf-card {
             background: #FFF;
-            border: 1px solid #EAEAEA;
+            border: 1px solid #E2E8F0;
             border-radius: 8px;
             padding: 40px 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -135,7 +142,7 @@
 
         .perf-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.08);
             border-color: var(--brand-color);
         }
 
@@ -218,7 +225,7 @@
 
             <div class="col-md-4">
                 <div class="perf-card text-center" style="border-top: 4px solid var(--brand-color);">
-                    <span class="badge bg-danger text-uppercase mb-3">Competição Alvo</span>
+                    <span class="badge bg-primary text-uppercase mb-3" style="background-color: var(--brand-color) !important;">Competição Alvo</span>
                     <h3 class="stat-highlight" style="color: var(--dark-bg); font-size: 2.2rem;">JIF SUDESTE</h3>
                     <p class="fw-bold mb-1">09 a 16 de Setembro</p>
                     <p class="text-muted small">Etapa regional de altíssimo nível. A vitrine perfeita para exposição de marcas parceiras.</p>
@@ -252,7 +259,7 @@
         </p>
         
         <div class="d-flex justify-content-center gap-3 flex-wrap">
-            <a href="mailto:mikaelmarley892@gmail.com" class="btn-brand" style="background-color: #FFF; color: var(--dark-bg);">📧 ENVIAR PROPOSTA</a>
+            <a href="mailto:mikaelmarley892@gmail.com" class="btn-brand" style="background: #FFF; color: var(--dark-bg); box-shadow: none;">📧 ENVIAR PROPOSTA</a>
             <a href="https://instagram.com/mikael__marley" target="_blank" class="btn-brand">📸 INSTAGRAM DO ATLETA</a>
         </div>
     </div>
