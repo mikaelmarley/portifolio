@@ -41,8 +41,10 @@
 
 #hero {
   background-image: url('images/meditating.webp');
-  background-size: cover;
+  background-size: contain; /* Essa é a palavra mágica para não cortar mais */
   background-position: center;
+  background-repeat: no-repeat;
+  background-color: #111; /* Cor de fundo para as bordas ficarem elegantes */
   height: 100vh;
   display: flex;
   align-items: center;
