@@ -113,6 +113,29 @@
             box-shadow: 0 6px 20px rgba(0, 102, 255, 0.4);
         }
 
+        /* Botão específico do WhatsApp */
+        .btn-whatsapp {
+            background: #25D366;
+            color: #FFF;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20BA56;
+            color: #FFF;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
         .purpose-box {
             background-color: var(--light-bg);
             border-left: 8px solid var(--brand-color);
@@ -168,7 +191,7 @@
         .carousel-item img {
             width: 100%;
             height: auto; 
-            border-radius: 12px; /* Garante cantos arredondados na foto */
+            border-radius: 12px; 
         }
     </style>
 </head>
@@ -219,7 +242,6 @@
     <div class="container">
         <h2 class="text-center mb-5">Minha Trajetória</h2>
         
-        <!-- Max-width 500px para manter o tamanho justinho que você gostou -->
         <div id="carrosselAtleta" class="carousel slide mx-auto" data-bs-ride="carousel" data-bs-interval="4500" style="max-width: 500px;">
             <div class="carousel-inner">
                 
@@ -299,9 +321,16 @@
             Apoiar um atleta é investir em valores inegociáveis. Ofereço exposição direta para uma comunidade engajada de mais de 1.200 seguidores, espaço em uniformes e marketing de influência autêntico e íntegro.
         </p>
         
+        <!-- BOTÕES DE CONTATO ATUALIZADOS -->
         <div class="d-flex justify-content-center gap-3 flex-wrap">
-            <a href="mailto:mikaelmarley892@gmail.com" class="btn-brand" style="background: #FFF; color: var(--dark-bg); box-shadow: none;">📧 ENVIAR PROPOSTA</a>
-            <a href="https://instagram.com/mikael__marley" target="_blank" class="btn-brand">📸 INSTAGRAM DO ATLETA</a>
+            <!-- Link Direto para o Gmail (abre a tela de escrever email) -->
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mikaelmarley892@gmail.com" target="_blank" class="btn-brand" style="background: #FFF; color: var(--dark-bg); box-shadow: none;">📧 ENVIAR PROPOSTA</a>
+            
+            <!-- Link para o WhatsApp (DDI 55 + DDD 33 + Número) -->
+            <a href="https://wa.me/553384644451" target="_blank" class="btn-whatsapp">📱 WHATSAPP</a>
+
+            <!-- Link do Instagram -->
+            <a href="https://instagram.com/mikael__marley" target="_blank" class="btn-brand">📸 INSTAGRAM</a>
         </div>
     </div>
 </section>
