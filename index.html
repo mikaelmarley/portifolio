@@ -60,9 +60,8 @@
             color: var(--brand-color);
         }
 
-        /* --- SOLUÇÃO HERO SECTION --- */
+        /* --- HERO SECTION --- */
         #hero {
-            /* Voltamos para cover, mas forçamos o alinhamento para o topo à direita (onde está seu rosto) */
             background: linear-gradient(to right, rgba(11, 15, 25, 0.95) 40%, rgba(11, 15, 25, 0.3) 100%), url('images/Podio.jpg') top right/cover no-repeat;
             background-color: var(--dark-bg);
             height: 85vh;
@@ -159,21 +158,18 @@
             padding: 80px 0;
         }
 
-        /* --- SOLUÇÃO CARROSSEL --- */
-        .carousel-item {
-            /* Fundo escuro para a área que a foto não cobrir */
-            background-color: #000;
-            height: 600px; /* Altura fixa para o carrossel não ficar pulando */
-            border-radius: 12px;
+        /* --- CARROSSEL AJUSTADO (sem fundo preto) --- */
+        .carousel-inner {
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
-
+        
+        /* Imagens respeitando sua proporção original */
         .carousel-item img {
-            /* contain garante que a foto apareça inteira sem cortes */
-            object-fit: contain;
-            height: 100%;
             width: 100%;
+            height: auto; 
+            border-radius: 12px; /* Garante cantos arredondados na foto */
         }
-
     </style>
 </head>
 <body>
@@ -218,15 +214,15 @@
     </div>
 </section>
 
-<!-- SEÇÃO: GALERIA DE FOTOS (CARROSSEL) AJUSTADA -->
+<!-- SEÇÃO: GALERIA DE FOTOS (CARROSSEL) -->
 <section id="galeria" class="py-5 bg-light">
     <div class="container">
         <h2 class="text-center mb-5">Minha Trajetória</h2>
         
-        <div id="carrosselAtleta" class="carousel slide mx-auto" data-bs-ride="carousel" data-bs-interval="4500" style="max-width: 900px;">
-            <div class="carousel-inner" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+        <!-- Ajustei o max-width para 500px para ficar justinho com fotos verticais -->
+        <div id="carrosselAtleta" class="carousel slide mx-auto" data-bs-ride="carousel" data-bs-interval="4500" style="max-width: 500px;">
+            <div class="carousel-inner">
                 
-                <!-- Apenas as duas fotos que você pediu, sem cortes (usando object-fit: contain) -->
                 <div class="carousel-item active">
                     <img src="images/Podio.jpg" class="d-block" alt="No Pódio">
                 </div>
@@ -237,11 +233,11 @@
                 
             </div>
             
-            <button class="carousel-control-prev" type="button" data-bs-target="#carrosselAtleta" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrosselAtleta" data-bs-slide="prev" style="margin-left: -50px;">
                 <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(0,0,0,0.6); border-radius: 50%; padding: 25px;"></span>
                 <span class="visually-hidden">Anterior</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carrosselAtleta" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carrosselAtleta" data-bs-slide="next" style="margin-right: -50px;">
                 <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(0,0,0,0.6); border-radius: 50%; padding: 25px;"></span>
                 <span class="visually-hidden">Próximo</span>
             </button>
@@ -257,7 +253,8 @@
             <div class="col-md-4">
                 <div class="perf-card text-center">
                     <span class="text-uppercase fw-bold text-muted small tracking-wide">Recorde Pessoal (PR)</span>
-                    <h3 class="stat-highlight">18m 20s</h3>
+                    <!-- RECORDE ATUALIZADO AQUI! -->
+                    <h3 class="stat-highlight">17m 11s</h3>
                     <p class="fw-bold mb-1">Distância: 5 KM</p>
                     <p class="text-muted small">Conquistado em Divinolândia. Progresso contínuo rumo à excelência.</p>
                 </div>
